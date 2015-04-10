@@ -1,12 +1,12 @@
 
 #include "tuter/test.hpp"
 
-tuter::test::Test()
+tuter::test::test()
 {
 
 }
 
-tuter::test::~Test()
+tuter::test::~test()
 {
 
 }

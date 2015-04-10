@@ -8,8 +8,8 @@ namespace tuter
 class test
 {
 public:
-    Test();
-    virtual ~Test();
+    test();
+    virtual ~test();
 };
 
 }
