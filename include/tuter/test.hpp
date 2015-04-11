@@ -10,6 +10,7 @@ class test
 public:
     test();
     virtual ~test();
+    virtual void run_tests()=0;
 };
 
 }

@@ -3,12 +3,13 @@
 #define TUTER_CALLER_HPP
 
 #include <vector>
+#include "tuter/test.hpp"
 
 namespace tuter
 {
 
 template <typename test_class>
-class caller
+class caller : public test
 {
 public:
     typedef void (test_class::*test_function)();
@@ -20,8 +21,8 @@ private:
 public:
 	caller();
 	virtual ~caller();
-	void add_function(test_function);
-	void run_functions();
+	virtual void add_function(test_function);
+	virtual void run_tests();
 };
 
 template <typename test_class>
@@ -47,7 +48,7 @@ caller<test_class>::add_function(test_function tf)
 
 template <typename test_class>
 void
-caller<test_class>::run_functions()
+caller<test_class>::run_tests()
 {
     typename std::vector<test_function>::iterator it = _functions->begin();
 	for(; it!=_functions->end(); it++)
