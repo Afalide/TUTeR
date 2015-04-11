@@ -1,14 +1,47 @@
 
-#ifndef TUTER_SYMBOLS_HPP
-#define TUTER_SYMBOLS_HPP
-
-#include "tuter/test_area.hpp"
+#ifndef TUTER_MACROS_HPP
+#define TUTER_MACROS_HPP
 
 #include <vector>
+#include "tuter/caller.hpp"
 
-#define TUTER_DECLARE_FN_NAME      _tuter_create_test_areas
-#define TUTER_DECLARE_TESTS_BEGIN  std::vector<tuter::test_area*> TUTER_DECLARE_FN_NAME () { std::vector<tuter::test_area*> __vec;
-#define TUTER_DECLARE_TESTS_END    return __vec; }
-#define TUTER_DECLARE(X)           __vec.push_back(new X );
+// TUTER DECLARE
 
-#endif // TUTER_SYMBOLS_HPP
+#define tuter_declare(X) \
+class caller_##X : public tuter::caller<X> \
+{ \
+public: \
+    caller_##X(); \
+    virtual ~caller_##X(); \
+}; \
+caller_##X::~caller_##X(){} \
+caller_##X::caller_##X() \
+{
+
+#define tuter_add(X) add_function(& X);
+
+#define tuter_declare_end }
+
+// TUTER EXPORT
+
+#define tuter_export \
+extern "C" \
+{ \
+    namespace tuter \
+    { \
+        __declspec(dllexport) std::vector<tuter::test*> expose_tests(); \
+        std::vector<tuter::test*> expose_tests() \
+        { \
+            std::vector<tuter::test*> vec; \
+
+#define tuter_expose(X) \
+            vec.push_back(new caller_##X);
+
+#define tuter_export_end \
+            return vec; \
+        } \
+    } \
+}
+
+#endif // TUTER_MACROS_HPP
+
