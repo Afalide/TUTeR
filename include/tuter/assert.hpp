@@ -25,7 +25,6 @@ template <> bool are_equal<char>(char value, char should_be)
     std::cout << "assert: char" << std::endl;
     //case-sensitive comparizon:
     return value == should_be;
-
 }
 
 template <> bool are_equal<int>(int value, int should_be)
@@ -46,7 +45,7 @@ template <typename T> void run_are_equal(T value, T should_be, int line_num, con
     }
 }
 
-}
+} //namespace tuter
 
 #endif // TUTER_ASSERT_HPP
 
