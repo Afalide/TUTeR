@@ -4,7 +4,10 @@
 
 #include <iostream>
 
-#define macro_are_equal(X,Y) run_are_equal(X,Y,__LINE__ ,__FILE__)
+#define tuter_are_equal(X,Y) tuter::run_are_equal(X,Y,__LINE__ ,__FILE__)
+
+namespace tuter
+{
 
 //are_equal template
 
@@ -41,6 +44,8 @@ template <typename T> void run_are_equal(T value, T should_be, int line_num, con
                   << "  in file: " << file_path << std::endl
                   << "  at line: " << line_num << std::endl;
     }
+}
+
 }
 
 #endif // TUTER_ASSERT_HPP
