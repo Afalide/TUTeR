@@ -27,14 +27,14 @@ tuter::runner::run_all(const char* so_path)
     dll = LoadLibrary(so_path);
     if(NULL == dll)
     {
-        std::cout << "failed to open object" << so_path << std::endl;
+        std::cout << "failed to open object " << so_path << std::endl;
         return ;
     }
 
-    expose_tests = (expose_tests_fn) GetProcAddress(dll, TUTER_EXPOSE_FN);
+    expose_tests = (expose_tests_fn) GetProcAddress(dll, TUTER_EXPOSE_FN_QUOTES);
     if(NULL == expose_tests)
     {
-        std::cout << "failed to load " << TUTER_EXPOSE_FN << " function" << std::endl;
+        std::cout << "failed to load " << TUTER_EXPOSE_FN_QUOTES << " function" << std::endl;
         return;
     }
 

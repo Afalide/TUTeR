@@ -38,6 +38,8 @@ template <typename T> void display_assert_values(T value, T should_be)
 
 template <typename T> std::string display_single_asert_value(T value)
 {
+    if(value){} //removes warnings about unused value
+
     //unknown type, be safe, do not display it.
     //functions which specializes this template will do that job
     return std::string("<display not implemented for that type>");
