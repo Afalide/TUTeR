@@ -24,6 +24,7 @@ template <> bool are_equal<int>(int value, int should_be);
 template <> bool are_equal<char>(char value, char should_be);
 
 template <> std::string display_single_asert_value<int>(int value);
+template <> std::string display_single_asert_value<float>(float value);
 
 //assert values display
 
