@@ -16,7 +16,7 @@ namespace tuter
 template <typename T> void display_assert_values(T, T);
 template <typename T> void run_are_equal(T, T, int, const char*);
 
-//specializable prototypes
+//specializable prototypes templates
 
 template <typename T> std::string display_single_asert_value(T);
 template <typename T> bool are_equal(T, T);
@@ -36,11 +36,11 @@ template <typename T> void display_assert_values(T value, T should_be)
              << "  expected value was: " << display_single_asert_value(should_be) << std::endl;
 }
 
-//assert values display helper template
+//assert values display: type description helper template
 
 template <typename T> std::string display_single_asert_value(T value)
 {
-    if(value){} //removes warnings about unused value
+    (void) value; //removes warnings about unused value
 
     //unknown type, be safe, do not display it.
     //functions which specializes this template will do that job
