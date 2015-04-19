@@ -11,18 +11,20 @@
 namespace tuter
 {
 
-//prototypes
+//internal use prototypes
 
 template <typename T> void display_assert_values(T, T);
-template <typename T> std::string display_single_asert_value(T);
-template <typename T> bool are_equal(T, T);
 template <typename T> void run_are_equal(T, T, int, const char*);
 
-//prototypes: specializations
+//specializable prototypes
+
+template <typename T> std::string display_single_asert_value(T);
+template <typename T> bool are_equal(T, T);
+
+//prototypes specializations
 
 template <> bool are_equal<int>(int value, int should_be);
 template <> bool are_equal<char>(char value, char should_be);
-
 template <> std::string display_single_asert_value<int>(int value);
 template <> std::string display_single_asert_value<float>(float value);
 
