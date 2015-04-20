@@ -13,6 +13,7 @@ namespace tuter
 
 //internal use prototypes
 
+void display_file_and_line(int line_num, const char* file_path);
 template <typename T> void display_assert_values(T, T);
 template <typename T> void run_are_equal(T, T, int, const char*);
 
@@ -62,9 +63,10 @@ template <typename T> void run_are_equal(T value, T should_be, int line_num, con
 {
     if(!are_equal(value,should_be))
     {
-        std::cout << "assert are_equal failed" << std::endl
-                  << "  in file: " << file_path << std::endl
-                  << "  at line: " << line_num << std::endl;
+        std::cout << "equality assert failed" << std::endl;
+//                  << "  in file: " << file_path << std::endl
+//                  << "  at line: " << line_num << std::endl;
+        display_file_and_line(line_num, file_path);
         display_assert_values(value, should_be);
     }
 }

@@ -2,11 +2,18 @@
 #include "tuter/assert.hpp"
 //#include <string>
 #include <sstream>
+#include <iostream>
 
 //are_equal template specializations
 
 namespace tuter
 {
+
+void display_file_and_line(int line_num, const char* file_path)
+{
+    std::cout << "  in file: " << file_path << std::endl
+              << "  at line: " << line_num << std::endl;
+}
 
 template <> bool are_equal<char>(char value, char should_be)
 {
