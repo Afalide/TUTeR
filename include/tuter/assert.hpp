@@ -16,6 +16,9 @@ namespace tuter
 void display_file_and_line(int line_num, const char* file_path);
 template <typename T> void display_assert_values(T, T);
 template <typename T> void run_are_equal(T, T, int, const char*);
+template <typename T> void display_base_value(T);
+template <typename T> void display_compared_value_expected(T);
+template <typename T> void display_compared_value_unexpected(T);
 
 //specializable prototypes templates
 
@@ -30,6 +33,21 @@ template <> std::string display_single_asert_value<int>(int value);
 template <> std::string display_single_asert_value<float>(float value);
 
 //assert values display
+
+template <typename T> void display_base_value(T value)
+{
+    std::cout << "  given value was:      " << display_single_asert_value(value) << std::endl;
+}
+
+template <typename T> void display_compared_value_expected(T value)
+{
+    std::cout << "  expected value was:   " << display_single_asert_value(value) << std::endl;
+}
+
+template <typename T> void display_compared_value_unexpected(T value)
+{
+    std::cout << "  unexpected value was: " << display_single_asert_value(value) << std::endl;
+}
 
 template <typename T> void display_assert_values(T value, T should_be)
 {

@@ -23,7 +23,8 @@ template <typename T> void run_not_equals(T value, T should_not_be, int line_num
     {
         std::cout << "inequality assert failed" << std::endl;
         display_file_and_line(line_num, file_path);
-        display_assert_values(value, should_not_be);
+        display_base_value(value);
+        display_compared_value_unexpected(should_not_be);
     }
 }
 
