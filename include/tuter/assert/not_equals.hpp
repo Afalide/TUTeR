@@ -4,7 +4,7 @@
 
 #include "tuter/assert.hpp"
 
-#define tassert_not_equals(X,Y) tuter::run_not_equals(X,Y,__LINE__ ,__FILE__)
+#define tuter_assert_not_equals(X,Y) tuter::run_not_equals(X,Y,__LINE__ ,__FILE__)
 
 namespace tuter
 {
