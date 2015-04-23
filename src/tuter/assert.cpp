@@ -15,18 +15,18 @@ void display_file_and_line(int line_num, const char* file_path)
               << "  at line: " << line_num << std::endl;
 }
 
-template <> bool equals<char>(char value, char should_be)
-{
-    std::cout << "assert: char" << std::endl;
-    //case-sensitive comparizon:
-    return value == should_be;
-}
-
-template <> bool equals<int>(int value, int should_be)
-{
-    std::cout << "assert: int" << std::endl;
-    return value == should_be;
-}
+//template <> bool equals<char>(char value, char should_be)
+//{
+//    std::cout << "assert: char" << std::endl;
+//    //case-sensitive comparizon:
+//    return value == should_be;
+//}
+//
+//template <> bool equals<int>(int value, int should_be)
+//{
+//    std::cout << "assert: int" << std::endl;
+//    return value == should_be;
+//}
 
 //assert values display helper template specializations
 
