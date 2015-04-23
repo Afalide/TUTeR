@@ -24,13 +24,17 @@ caller_##X::caller_##X() \
 
 // TUTER EXPORT
 
+#define TUTER_EXPOSE_FN         expose_tests
+#define TUTER_EXPOSE_FN_QUOTES  "expose_tests"
+//#define TUTER_EXPOSE_FN a##TUTER_EXPOSE_FN_NOQUOTES##a
+
 #define tuter_export \
 extern "C" \
 { \
     namespace tuter \
     { \
-        __declspec(dllexport) std::vector<tuter::test*> expose_tests(); \
-        std::vector<tuter::test*> expose_tests() \
+        __declspec(dllexport) std::vector<tuter::test*> TUTER_EXPOSE_FN(); \
+        std::vector<tuter::test*> TUTER_EXPOSE_FN () \
         { \
             std::vector<tuter::test*> vec; \
 
