@@ -3,10 +3,6 @@
 #define TUTER_ASSERT_HPP
 
 #include <iostream>
-//#include <string>
-
-//user-friendly macro
-
 
 namespace tuter
 {
@@ -14,7 +10,6 @@ namespace tuter
 //internal use prototypes
 
 void display_file_and_line(int line_num, const char* file_path);
-template <typename T> void display_assert_values(T, T);
 template <typename T> void display_base_value(T);
 template <typename T> void display_compared_value_expected(T);
 template <typename T> void display_compared_value_unexpected(T);
@@ -43,12 +38,6 @@ template <typename T> void display_compared_value_expected(T value)
 template <typename T> void display_compared_value_unexpected(T value)
 {
     std::cout << "  unexpected value was: " << display_single_asert_value(value) << std::endl;
-}
-
-template <typename T> void display_assert_values(T value, T should_be)
-{
-   std::cout << "  given value was:    " << display_single_asert_value(value) << std::endl
-             << "  expected value was: " << display_single_asert_value(should_be) << std::endl;
 }
 
 //assert values display: type description helper template
