@@ -1,6 +1,6 @@
 
-#ifndef TUTER_ASSERT_HPP
-#define TUTER_ASSERT_HPP
+#ifndef TUTER_ASSERT_DISPLAY_HPP
+#define TUTER_ASSERT_DISPLAY_HPP
 
 #include <iostream>
 
@@ -56,5 +56,5 @@ template <typename T> std::string display_single_asert_value(T value)
 
 } //namespace tuter
 
-#endif // TUTER_ASSERT_HPP
+#endif // TUTER_ASSERT_DISPLAY_HPP
 

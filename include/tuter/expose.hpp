@@ -1,6 +1,6 @@
 
-#ifndef TUTER_MACROS_HPP
-#define TUTER_MACROS_HPP
+#ifndef TUTER_EXPOSE_HPP
+#define TUTER_EXPOSE_HPP
 
 #include <vector>
 #include "tuter/caller.hpp"
@@ -47,5 +47,5 @@ extern "C" \
     } \
 }
 
-#endif // TUTER_MACROS_HPP
+#endif // TUTER_EXPOSE_HPP
 
