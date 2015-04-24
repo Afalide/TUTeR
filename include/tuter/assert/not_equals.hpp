@@ -2,7 +2,7 @@
 #ifndef TUTER_ASSERT_NOT_EQUALS_HPP
 #define TUTER_ASSERT_NOT_EQUALS_HPP
 
-#include "tuter/assert.hpp"
+#include "tuter/assert/display.hpp"
 
 #define tuter_assert_not_equals(X,Y) tuter::run_not_equals(X,Y,__LINE__ ,__FILE__)
 
