@@ -26,7 +26,6 @@ caller_##X::caller_##X() \
 
 #define TUTER_EXPOSE_FN         expose_tests
 #define TUTER_EXPOSE_FN_QUOTES  "expose_tests"
-//#define TUTER_EXPOSE_FN a##TUTER_EXPOSE_FN_NOQUOTES##a
 
 #define tuter_export \
 extern "C" \

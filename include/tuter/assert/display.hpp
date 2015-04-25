@@ -51,9 +51,6 @@ template <typename T> std::string display_single_asert_value(T value)
     return std::string("<display not implemented for that type>");
 }
 
-
-
-
 } //namespace tuter
 
 #endif // TUTER_ASSERT_DISPLAY_HPP

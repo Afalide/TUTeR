@@ -12,8 +12,6 @@ namespace tuter
 template <typename T> bool equals(T, T);
 template <typename T> void run_equals(T, T, int, const char*);
 
-//template <> bool equals<char>(char value, char should_be);
-
 template <typename T> bool equals(T value, T should_be)
 {
     return (value == should_be);
