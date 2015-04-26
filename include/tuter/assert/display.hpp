@@ -3,6 +3,8 @@
 #define TUTER_ASSERT_DISPLAY_HPP
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 namespace tuter
 {
@@ -13,6 +15,7 @@ void display_file_and_line(int line_num, const char* file_path);
 template <typename T> void display_base_value(T);
 template <typename T> void display_compared_value_expected(T);
 template <typename T> void display_compared_value_unexpected(T);
+template <typename T> std::string std_convert(T& value);
 
 //specializable prototypes templates
 
@@ -22,6 +25,7 @@ template <typename T> std::string display_single_asert_value(T);
 
 template <> std::string display_single_asert_value<int>(int value);
 template <> std::string display_single_asert_value<float>(float value);
+template <> std::string display_single_asert_value<const char*>(const char* value);
 
 //assert values display
 
@@ -38,6 +42,15 @@ template <typename T> void display_compared_value_expected(T value)
 template <typename T> void display_compared_value_unexpected(T value)
 {
     std::cout << "  unexpected value was: " << display_single_asert_value(value) << std::endl;
+}
+
+//c++ std osstream converter
+
+template <typename T> std::string std_convert(T& value)
+{
+    std::ostringstream conv;
+    conv << value;
+    return std::string(conv.str());
 }
 
 //assert values display: type description helper template
